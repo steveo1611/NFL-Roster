@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/styles/main.css">
+    <title>NFL FFL selection</title>
+</head>
+
+<body>
+  <header>
+        <h1 class="head"> FFL Team Selection Application</h1>
+  </header>
+    <section>
+        <div name="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="section">Team List:</h1>
+                    <div id="teamList" class="card-deck">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div name="container">
+            <div name="row">
+                <div class="col-offset-2 d-flex flex-row align-items-center search">
+                    <div class="input-group"> 
+                            <form class="form-inline choice" onsubmit="app.controllers.fFootballController.getName(event)" id="searchForm">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="player" placeholder="Search Name:" />
+                                        <button type="submit" class="btn btn-primary" id="nameSearch">Search Name</button>
+                                    </div>
+                                </form>
+                            <form class="form-inline choice">
+                            <select class="custom-select" id="inputTeamSelect">
+                                <option selected>Choose a team...</option>
+                                <option value="ARI">Cards</option>
+                                <option value="ATL">Falcons</option>
+                                <option value="BAL">Ravens</option>
+                                <option value="BUF">Bills</option>
+                                <option value="CAR">Panthers</option>
+                                <option value="CHI">DA Bears</option>
+                                <option value="CLE">Browns</option>
+                                <option value="DAL">Cowboys</option>
+                                <option value="DEN">Broncos</option>
+                                <option value="DET">Lions</option>
+                                <option value="GB">Packers</option>
+                                <option value="HOU">Texans</option>
+                                <option value="IND">Colts</option>
+                                <option value="JAC">Jags</option>
+                                <option value="KC">Chiefs</option>
+                                <option value="LAC">Chargers</option>
+                                <option value="LAR">Rams</option>
+                                <option value="MIA">Dolphins</option>
+                                <option value="MIN">Vikings</option>
+                                <option value="NE">Pats</option>
+                                <option value="NO">Saints</option>
+                                <option value="NYG">Giants</option>
+                                <option value="NYJ">Da Jets</option>
+                                <option value="OAK">Raiders</option>
+                                <option value="PHI">Eagles</option>
+                                <option value="PIT">Steelers</option>
+                                <option value="SEA">SeaHAWKS</option>
+                                <option value="SF">49ers</option>
+                                <option value="TB">Bucs</option>
+                                <option value="TEN">Titans</option>
+                                <option value="WAS">Redskins</option>
+                                <option value="DRF">Drafted</option>
+                                <option value="FA">Free Agent</option>
+                            </select>
+                                <button class="btn btn-primary" onclick="app.controllers.fFootballController.getByTeam(event)">Search by Team</button>
+                          </form>
+                                <form class="form-inline choice">
+                            <select class="custom-select" id="inputPos">
+                                <option selected>Choose a position...</option>
+                                <option value="QB">QB</option>
+                                <option value="RB">RB</option>
+                                <option value="WR">WR</option>
+                                <option value="TE">TE</option>
+                                <option value="K">Kicker</option>
+                                <option value="DST">Defense/SpecialTeams</option>
+                            </select>
+                                <button class="btn btn-primary" onclick="app.controllers.fFootballController.getByPos(event)">Search by Position</button>
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div name="container players">
+            <div class="row">
+                <div class="col">
+                    <h1 class="section"> Available Players List:</h1>
+                    <div id="playerlist" class="card-deck">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/scripts/fantasyFootballService.js"></script>
+    <script src="assets/scripts/fantasyFootballController.js"></script>
+    <script src="assets/scripts/app.js"></script>
+</body>
+
+</html>
